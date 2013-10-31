@@ -1,0 +1,19 @@
+development: &development
+  adapter      : postgresql
+  encoding     : unicode
+  database     : baton_development
+  template     : template0
+  pool         : 5
+  min_messages : warning
+
+test: &test
+  <<: *development
+  database     : baton_test
+
+staging: &staging
+  <<: *development
+  database     : baton_staging
+
+production: &production
+  <<: *development
+  database     : baton_production
