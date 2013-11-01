@@ -44,6 +44,7 @@ gem 'uglifier',                     '>= 1.0.3'     # Makes your JS ugly (compres
 gem 'unicorn',                      '~> 4.6.2'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 gem 'validates_existence',          '~> 0.8.0'     # Validates Rails model belongs_to association existence
 gem 'will_paginate',                '~> 3.0.5'     # Pagination
+gem 'yajl-ruby',                    '~> 1.1.0'     # json parsing, but faster (also plays nice with multi-json and Zeus)
 
 group :development do
   gem 'awesome_print'         # Inspect your objects with style (and color)
