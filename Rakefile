@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Soundingboard::Application.load_tasks
+MyApp::Application.load_tasks
