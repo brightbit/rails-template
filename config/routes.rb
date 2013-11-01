@@ -53,4 +53,11 @@ MyApp::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # Point root to static index file using high_voltage gem
+  root to: 'high_voltage/pages#show',         id: 'index'
+
+  # Point fallback route to any matching static page
+  # Keep this at the end to avoid conflicting with other routes
+  get ':id' => 'high_voltage/pages#show',     as: :static
 end
