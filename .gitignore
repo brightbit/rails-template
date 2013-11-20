@@ -19,6 +19,8 @@ tmp
 
 # Ignore enviroment variable files
 .env*
+!.env.example
+!.envrc
 .powenv
 
 # Ignore local TDDium config
