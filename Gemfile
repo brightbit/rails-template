@@ -51,6 +51,8 @@ group :development do
   gem 'brakeman'              # Security auditing
   gem 'bullet'                # Finds your N+1 problems
   gem 'foreman'               # Manage Procfile-based applications (run multiple ruby processes by running foreman)
+  gem 'binding_of_caller'     # Provide advanced features for better_errors pages
+  gem 'better_errors'         # More helpful error pages in development
   gem 'guard-livereload'      # Automatically reload your browser when 'view' files are modified
   gem 'letter_opener'         # Open development emails in a browser instead of sending them
   gem 'lol_dba'               # Scan your models for columns that (probably) should be indexed
@@ -71,6 +73,7 @@ group :development, :test do
   gem 'pry-plus'              # Add a bunch of awesome pry stuff (rescue, stack_explorer, doc)
   gem 'pry-remote'            # Use pry with pow
   gem 'recipient_interceptor' # Intercept recipients when delivering email with the Mail gem
+  gem 'table_print'           # Explore your ActiveRecord data with ease
 end
 
 group :test do
@@ -78,6 +81,7 @@ group :test do
   gem 'capybara_minitest_spec'    # Integrates capybara and minitest; Duh
   gem 'database_cleaner'          # Cleans db between test runs
   gem 'factory_girl_rails'        # For stubbing/creating objects with factories
+  gem 'minitest-metadata'         # Metadata (key-value) support for minitest/spec
   gem 'minitest-spec-rails'       # Nice minitest integration with Rails
   gem 'poltergeist'               # Uses phantomjs to headlessly test your views
   gem 'simplecov', require: false # Test coverage reporting

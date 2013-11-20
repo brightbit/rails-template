@@ -26,4 +26,6 @@ MyApp::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  BetterErrors::Middleware.allow_ip! ENV['BETTER_ERRORS_TRUSTED_IP'] if (IPAddr(ENV['BETTER_ERRORS_TRUSTED_IP']) rescue false)
 end
