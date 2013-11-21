@@ -17,7 +17,7 @@ One or two sentences giving an overview of the issue.
 
 ## Steps to Reproduce
 
-  1. Went to [Giant Coffee mug](https://swagexper.com/products/123)
+  1. Went to [Giant Coffee mug](https://example.com/products/123)
 
   2. Clicked "Launch Ponies"
 
