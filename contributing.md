@@ -162,7 +162,7 @@ following to the bucket:
         <AllowedHeader>*</AllowedHeader>
     </CORSRule>
     <CORSRule>
-        <AllowedOrigin>*://swagexpert.dev</AllowedOrigin>
+        <AllowedOrigin>*://appname.dev</AllowedOrigin>
         <AllowedMethod>GET</AllowedMethod>
         <AllowedMethod>POST</AllowedMethod>
         <AllowedMethod>PUT</AllowedMethod>
