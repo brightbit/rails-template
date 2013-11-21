@@ -22,5 +22,8 @@ module MyApp
 
     # Tell Unicorn to log to STDOUT on Heroku
     config.logger = Logger.new(STDOUT) unless Rails.env.development?
+
+    # Raise errors when an unpermitted param is sent to a controller action
+    ActiveRecord::Base.send(:include, ActiveModel::ForbiddenAttributesProtection)
   end
 end
