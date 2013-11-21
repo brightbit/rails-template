@@ -20,6 +20,11 @@ module MyApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Use SQL instead of Active Record's schema dumper when creating the database (for QueueClassic)
+    # This is necessary if your schema can't be completely dumped by the schema dumper,
+    # like if you have constraints or database-specific column types
+    config.active_record.schema_format = :sql
+
     # Tell Unicorn to log to STDOUT on Heroku
     config.logger = Logger.new(STDOUT) unless Rails.env.development?
 

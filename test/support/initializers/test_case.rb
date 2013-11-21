@@ -16,4 +16,9 @@ class ActiveSupport::TestCase
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.start
   end
+
+  def run_all_queued_jobs
+    worker = QC::Worker.new
+    worker.work while worker.queue.count > 0
+  end
 end
