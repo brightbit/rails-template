@@ -1,19 +1,19 @@
 development: &development
   adapter      : postgresql
   encoding     : unicode
-  database     : baton_development
+  database     : my_app_development
   template     : template0
   pool         : 5
   min_messages : warning
 
 test: &test
   <<: *development
-  database     : baton_test
+  database     : my_app_test
 
 staging: &staging
   <<: *development
-  database     : baton_staging
+  database     : my_app_staging
 
 production: &production
   <<: *development
-  database     : baton_production
+  database     : my_app_production
