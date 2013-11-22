@@ -32,3 +32,5 @@ module MyApp
     ActiveRecord::Base.send(:include, ActiveModel::ForbiddenAttributesProtection)
   end
 end
+
+Mail.register_interceptor RecipientInterceptor.new(ENV['EMAIL_RECIPIENTS']) if ENV['EMAIL_RECIPIENTS'] && defined?(Mail) && !Rails.env.test?

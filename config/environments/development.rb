@@ -13,6 +13,13 @@ MyApp::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  # Open email in browser or send via smtp
+  if ENV['EMAIL_RECIPIENTS']
+    config.action_mailer.delivery_method = :smtp
+  else
+    config.action_mailer.delivery_method = :letter_opener
+  end
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
