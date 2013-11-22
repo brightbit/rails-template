@@ -23,6 +23,9 @@ MyApp::Application.configure do
     config.action_mailer.delivery_method = :letter_opener
   end
 
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server for mailers.
+  config.action_mailer.asset_host = "http://localhost:3000"
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
@@ -36,6 +39,19 @@ MyApp::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+  # Configure Bullet
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.console = true
+    Bullet.rails_logger = true
+  end
 
   BetterErrors::Middleware.allow_ip! ENV['BETTER_ERRORS_TRUSTED_IP'] if (IPAddr(ENV['BETTER_ERRORS_TRUSTED_IP']) rescue false)
 end
