@@ -22,6 +22,9 @@ MyApp::Application.configure do
   # Precompile additional assets
   config.assets.precompile += %w( .svg .eot .woff .ttf )
 
+  # Silence SQL and other logging in test (tail log/test.log instead)
+  config.logger = nil
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
