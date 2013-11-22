@@ -37,14 +37,11 @@ gem 'sass-rails',                   '~> 4.0.0'     # CSS3 extension (mixins, var
 gem 'selectize-rails',              '~> 0.8.1'     # Textbox/select autocopmlete for tagging and contact lists
 gem 'simple_form',                  '~> 3.0.0.rc'  # Simplified DSL for forms'''
 gem 'slim-rails',                   '~> 2.0.3'     # Our favorite Ruby templating engine for html
-gem 'stripe',                       '~> 1.8.4'     # Accept payments
-gem 'stripe_event',                 '~> 0.6.0'     # Stripe webhook integration
 gem 'turbolinks',                   '~> 1.3.0'     # Makes following links in your web application faster
 gem 'uglifier',                     '>= 1.0.3'     # Makes your JS ugly (compressed)
 gem 'unicorn',                      '~> 4.6.2'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 gem 'validates_existence',          '~> 0.8.0'     # Validates Rails model belongs_to association existence
 gem 'will_paginate',                '~> 3.0.5'     # Pagination
-gem 'yajl-ruby',                    '~> 1.1.0'     # json parsing, but faster (also plays nice with multi-json and Zeus)
 
 group :development do
   gem 'awesome_print'         # Inspect your objects with style (and color)
@@ -53,11 +50,9 @@ group :development do
   gem 'foreman'               # Manage Procfile-based applications (run multiple ruby processes by running foreman)
   gem 'binding_of_caller'     # Provide advanced features for better_errors pages
   gem 'better_errors'         # More helpful error pages in development
-  gem 'guard-livereload'      # Automatically reload your browser when 'view' files are modified
   gem 'letter_opener'         # Open development emails in a browser instead of sending them
   gem 'lol_dba'               # Scan your models for columns that (probably) should be indexed
   gem 'quiet_assets'          # No more "Served asset" in your logs
-  gem 'rack-livereload'       # Bring in livereload.js into handy Rack middleware
   gem 'rails_best_practices'  # Code metric tool for showing best practices you're missing out on
   gem 'switch_user'           # Easily switch users in dev
   gem 'thin'                  # Fast threaded HTTP server for local development
@@ -85,10 +80,7 @@ group :test do
   gem 'minitest-spec-rails'       # Nice minitest integration with Rails
   gem 'poltergeist'               # Uses phantomjs to headlessly test your views
   gem 'simplecov', require: false # Test coverage reporting
-  gem 'stripe-ruby-mock'          # Mock the stripe library
   gem 'timecop'                   # Freeze/change time for your tests
-  gem 'vcr'                       # Record HTTP requests for testing
-  gem 'webmock'                   # Mock HTTP requests for testing (and vcr)
 end
 
 group :staging, :production do
