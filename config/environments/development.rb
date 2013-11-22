@@ -11,7 +11,10 @@ MyApp::Application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
+
+  # Cache stuff in memcache
+  config.cache_store = :mem_cache_store, { expires_in: 10.minutes }
 
   # Open email in browser or send via smtp
   if ENV['EMAIL_RECIPIENTS']
