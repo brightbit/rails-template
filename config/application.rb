@@ -30,6 +30,28 @@ module MyApp
 
     # Raise errors when an unpermitted param is sent to a controller action
     ActiveRecord::Base.send(:include, ActiveModel::ForbiddenAttributesProtection)
+
+    config.app_uri = URI.parse ENV.fetch('APP_URI')
+
+    # ActionMailer Config with Mandrill from Mailchimp for transactional mail
+    config.action_mailer.delivery_method = ENV.fetch('MAIL_DELIVERY_METHOD', :smtp).to_sym
+    if config.action_mailer.delivery_method == :smtp
+      config.action_mailer.smtp_settings = {
+        address:   'smtp.mandrillapp.com',
+        port:      587,
+        enable_starttls_auto: true,
+        user_name: ENV.fetch('MANDRILL_USERNAME'),
+        password:  ENV.fetch('MANDRILL_APIKEY'),
+        authentication: :plain,
+        domain: config.app_uri.host
+      }
+    end
+
+    config.action_mailer.perform_deliveries    = true
+    config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.default charset: "utf-8"
+    config.action_mailer.default_url_options = { protocol: config.app_uri.scheme, host: config.app_uri.host }
+    config.action_mailer.asset_host = config.app_uri.to_s
   end
 end
 

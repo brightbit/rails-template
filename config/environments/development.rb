@@ -17,9 +17,7 @@ MyApp::Application.configure do
   config.cache_store = :mem_cache_store, { expires_in: 10.minutes }
 
   # Open email in browser or send via smtp
-  if ENV['EMAIL_RECIPIENTS']
-    config.action_mailer.delivery_method = :smtp
-  else
+  if ENV['EMAIL_RECIPIENTS'] == 'letter_opener'
     config.action_mailer.delivery_method = :letter_opener
   end
 
