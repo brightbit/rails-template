@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+require_relative 'env'
+
 module MyApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -31,17 +33,17 @@ module MyApp
     # Raise errors when an unpermitted param is sent to a controller action
     ActiveRecord::Base.send(:include, ActiveModel::ForbiddenAttributesProtection)
 
-    config.app_uri = URI.parse ENV.fetch('APP_URI')
+    config.app_uri = URI.parse ENV!['APP_URI']
 
     # ActionMailer Config with Mandrill from Mailchimp for transactional mail
-    config.action_mailer.delivery_method = ENV.fetch('MAIL_DELIVERY_METHOD', :smtp).to_sym
+    config.action_mailer.delivery_method = ENV!['MAIL_DELIVERY_METHOD'].to_sym
     if config.action_mailer.delivery_method == :smtp
       config.action_mailer.smtp_settings = {
         address:   'smtp.mandrillapp.com',
         port:      587,
         enable_starttls_auto: true,
-        user_name: ENV.fetch('MANDRILL_USERNAME'),
-        password:  ENV.fetch('MANDRILL_APIKEY'),
+        user_name: ENV!['MANDRILL_USERNAME'],
+        password:  ENV!['MANDRILL_APIKEY'],
         authentication: :plain,
         domain: config.app_uri.host
       }
@@ -55,4 +57,4 @@ module MyApp
   end
 end
 
-Mail.register_interceptor RecipientInterceptor.new(ENV['EMAIL_RECIPIENTS']) if ENV['EMAIL_RECIPIENTS'] && defined?(Mail) && !Rails.env.test?
+Mail.register_interceptor RecipientInterceptor.new(ENV!['EMAIL_RECIPIENTS']) if ENV!['EMAIL_RECIPIENTS'] && defined?(Mail) && !Rails.env.test?

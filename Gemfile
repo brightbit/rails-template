@@ -12,6 +12,7 @@ gem 'coffee-rails',                 '~> 4.0.0'     # Outside assets for responde
 gem 'compass-rails',                '~> 1.1.2'     # CSS framework
 gem 'dalli',                        '~> 2.6.4'     # Caching with Memcached
 gem 'devise',                       '~> 3.1.1'     # Authentication with Warden
+gem 'env_bang',                     '0.2.2'        # Enforce configuration of environment variables
 gem 'fog',                          '~> 1.14.0'    # Ruby cloud services library (used by carrierwave)
 gem 'font_assets',                  '~> 0.1.10'    # Addresses Access-Control-Allow-Origin asset problems in Firefox
 gem 'has_scope',                    '~> 0.5.1'     # Easy controller scopes
