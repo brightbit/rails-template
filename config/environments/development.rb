@@ -17,17 +17,15 @@ MyApp::Application.configure do
   config.cache_store = :mem_cache_store, { expires_in: 10.minutes }
 
   # Open email in browser or send via smtp
-  if ENV['EMAIL_RECIPIENTS']
-    config.action_mailer.delivery_method = :smtp
-  else
+  if ENV['EMAIL_RECIPIENTS'] == 'letter_opener'
     config.action_mailer.delivery_method = :letter_opener
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server for mailers.
   config.action_mailer.asset_host = "http://localhost:3000"
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # Raise real errors in development
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

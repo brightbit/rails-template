@@ -9,7 +9,7 @@ gem 'authority',                    '~> 2.9.0'     # Authorize user actions in y
 gem 'bootstrap-sass',               '~> 3.0.0.0'     # Twitter Bootstrap front-end framework
 gem 'carrierwave',                  '~> 0.9.0'     # Server side file uploads (hand off from s3_direct_upload)
 gem 'coffee-rails',                 '~> 4.0.0'     # Outside assets for respondes to coffee
-gem 'compass-rails',                '~> 2.0.alpha' # CSS framework
+gem 'compass-rails',                '~> 1.1.2'     # CSS framework
 gem 'dalli',                        '~> 2.6.4'     # Caching with Memcached
 gem 'devise',                       '~> 3.1.1'     # Authentication with Warden
 gem 'fog',                          '~> 1.14.0'    # Ruby cloud services library (used by carrierwave)
@@ -62,7 +62,6 @@ end
 
 group :development, :test do
   gem 'dotenv-rails'          # Autoload ENV vars in .env
-  gem 'letter_opener'         # Open development emails in a browser instead of sending them
   gem 'pry-awesome_print'     # Auto AP in pry
   gem 'pry-rails'             # Interactive REPL debugger
   gem 'pry-plus'              # Add a bunch of awesome pry stuff (rescue, stack_explorer, doc)
