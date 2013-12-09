@@ -111,7 +111,9 @@ GEM
     dotenv (0.9.0)
     dotenv-rails (0.9.0)
       dotenv (= 0.9.0)
-    env_bang (0.2.2)
+    env_bang (0.2.5)
+    env_bang-rails (0.2.5)
+      env_bang (= 0.2.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.25.3)
@@ -407,7 +409,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 3.1.1)
   dotenv-rails
-  env_bang (= 0.2.2)
+  env_bang-rails (= 0.2.5)
   factory_girl_rails
   fog (~> 1.14.0)
   font_assets (~> 0.1.10)
