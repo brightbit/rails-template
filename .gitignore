@@ -16,6 +16,7 @@ tmp
 # Ignore enviroment variable files
 .env*
 !.env.example
+!.envrc
 .powenv
 
 # Ignore swp files
