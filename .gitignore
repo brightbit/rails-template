@@ -6,11 +6,30 @@
 
 # Ignore bundler config.
 /.bundle
-
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+vendor/bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-/tmp
+log/*.yml
+tmp
+
+# Ignore enviroment variable files
+.env*
+!.env.example
+.powenv
+
+# Ignore swp files
+*.swp
+
+# Ignore Temp Photo Uploads
+public/uploads
+
+# Ignore Assets
+public/assets
+
+tags
+coverage
+
+.sass-cache
+
+setup.lock
