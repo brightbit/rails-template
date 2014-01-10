@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.0.beta1'
 
-gem 'pg', '~> 0.17.1'
+gem 'pg',      '~> 0.17.1'    # Postgres ActiveRecord adapter
+gem 'unicorn', '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 
 # Asset related gems
 gem 'sass-rails',   '~> 4.0.0.rc1'
@@ -17,7 +18,9 @@ gem 'sdoc', group: :doc, require: false # bundle exec rake doc:rails generates t
 
 group :development do
   gem 'spring' # Spring speeds up development by keeping your application running in the background
+  gem 'thin'   # Fast threaded HTTP server for local development
 end
+
 group :development, :test do
   gem 'dotenv-rails' # Autoload ENV vars in .env
 end
