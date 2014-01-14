@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'dotenv'; Dotenv.load
+require 'minitest/reporters'; Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!

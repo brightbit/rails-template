@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     american_date (1.1.0)
+    ansi (1.4.3)
     arel (5.0.0)
     atomic (1.1.14)
     awesome_print (1.1.0)
@@ -59,6 +60,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.9)
     interception (0.3)
@@ -78,6 +80,11 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.2.1)
+    minitest-reporters (1.0.0)
+      ansi
+      builder
+      minitest (>= 5.0)
+      powerbar
     minitest-spec-rails (5.0.2)
       minitest (~> 5.0)
       rails (>= 4.1.0.beta, < 5.0)
@@ -86,6 +93,9 @@ GEM
     multi_json (1.8.3)
     pg (0.17.1)
     polyglot (0.3.3)
+    powerbar (1.0.11)
+      ansi (~> 1.4.0)
+      hashie (>= 1.1.0)
     pry (0.9.12.4)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -193,6 +203,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 1.2)
   jquery-rails (~> 3.0.4)
+  minitest-reporters
   minitest-spec-rails
   momentjs-rails (~> 2.5.0)
   pg (~> 0.17.1)
