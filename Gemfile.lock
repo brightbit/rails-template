@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ZenTest (4.9.5)
     actionmailer (4.1.0.beta1)
       actionpack (= 4.1.0.beta1)
       actionview (= 4.1.0.beta1)
@@ -31,6 +32,8 @@ GEM
     ansi (1.4.3)
     arel (5.0.0)
     atomic (1.1.14)
+    autotest-rails (4.2.1)
+      ZenTest (~> 4.5)
     awesome_print (1.1.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -198,6 +201,7 @@ PLATFORMS
 
 DEPENDENCIES
   american_date (~> 1.1.0)
+  autotest-rails
   coffee-rails (~> 4.0.0)
   dalli (~> 2.7.0)
   dotenv-rails

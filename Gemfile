@@ -27,6 +27,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'autotest-rails'      # Run 'autotest' to continually run your tests on change
   gem 'dotenv-rails'        # Autoload ENV vars in .env
   gem 'minitest-spec-rails' # MiniTest integration for Rails 3 and 4
   gem 'minitest-reporters'  # Customizable MiniTest output formats
