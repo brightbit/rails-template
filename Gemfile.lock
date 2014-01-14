@@ -78,6 +78,9 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.2.1)
+    minitest-spec-rails (5.0.2)
+      minitest (~> 5.0)
+      rails (>= 4.1.0.beta, < 5.0)
     momentjs-rails (2.5.0)
       railties (>= 3.1)
     multi_json (1.8.3)
@@ -190,6 +193,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 1.2)
   jquery-rails (~> 3.0.4)
+  minitest-spec-rails
   momentjs-rails (~> 2.5.0)
   pg (~> 0.17.1)
   pry-awesome_print

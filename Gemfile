@@ -27,8 +27,9 @@ group :development do
 end
 
 group :development, :test do
-  gem 'dotenv-rails'      # Autoload ENV vars in .env
-  gem 'pry-awesome_print' # Auto AP in pry
-  gem 'pry-rails'         # Interactive REPL debugger
-  gem 'pry-plus'          # Add a bunch of awesome pry stuff (rescue, stack_explorer, doc)
+  gem 'dotenv-rails'        # Autoload ENV vars in .env
+  gem 'minitest-spec-rails' # MiniTest integration for Rails 3 and 4
+  gem 'pry-awesome_print'   # Auto AP in pry
+  gem 'pry-rails'           # Interactive REPL debugger
+  gem 'pry-plus'            # Add a bunch of awesome pry stuff (rescue, stack_explorer, doc)
 end
