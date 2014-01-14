@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    american_date (1.1.0)
     arel (5.0.0)
     atomic (1.1.14)
     builder (3.2.2)
@@ -130,6 +131,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  american_date (~> 1.1.0)
   coffee-rails (~> 4.0.0)
   dalli (~> 2.7.0)
   dotenv-rails

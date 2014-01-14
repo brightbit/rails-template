@@ -4,9 +4,10 @@ ruby '2.1.0' # Tell heroku to use ruby 2.1.0
 
 gem 'rails', '4.1.0.beta1'
 
-gem 'dalli',   '~> 2.7.0'     # High performance memcached client
-gem 'pg',      '~> 0.17.1'    # Postgres ActiveRecord adapter
-gem 'unicorn', '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
+gem 'american_date', '~> 1.1.0'     # American style month/day/year date parsing
+gem 'dalli',         '~> 2.7.0'     # High performance memcached client
+gem 'pg',            '~> 0.17.1'    # Postgres ActiveRecord adapter
+gem 'unicorn',       '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 
 # Asset related gems
 gem 'sass-rails',   '~> 4.0.0.rc1'
