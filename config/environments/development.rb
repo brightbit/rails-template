@@ -16,11 +16,6 @@ MyApp::Application.configure do
   # Cache stuff in memcache
   config.cache_store = :mem_cache_store, { expires_in: 10.minutes }
 
-  # Open email in browser or send via smtp
-  if ENV['EMAIL_RECIPIENTS'] == 'letter_opener'
-    config.action_mailer.delivery_method = :letter_opener
-  end
-
   # Enable serving of images, stylesheets, and JavaScripts from an asset server for mailers.
   config.action_mailer.asset_host = "http://localhost:3000"
 
@@ -51,5 +46,5 @@ MyApp::Application.configure do
     Bullet.rails_logger = true
   end
 
-  BetterErrors::Middleware.allow_ip! ENV['BETTER_ERRORS_TRUSTED_IP'] if (IPAddr(ENV['BETTER_ERRORS_TRUSTED_IP']) rescue false)
+  BetterErrors::Middleware.allow_ip! ENV!['BETTER_ERRORS_TRUSTED_IP'] if (IPAddr(ENV!['BETTER_ERRORS_TRUSTED_IP']) rescue false)
 end
