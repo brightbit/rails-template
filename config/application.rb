@@ -14,5 +14,8 @@ module MyApp
 
     # Use SQL instead of Active Record's schema dumper when creating the database (for QueueClassic)
     config.active_record.schema_format = :sql
+
+    # Raise errors when an unpermitted param is sent to a controller action
+    ActiveRecord::Base.send(:include, ActiveModel::ForbiddenAttributesProtection)
   end
 end
