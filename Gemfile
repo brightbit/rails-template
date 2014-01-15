@@ -4,11 +4,12 @@ ruby '2.1.0' # Tell heroku to use ruby 2.1.0
 
 gem 'rails', '4.1.0.beta1'
 
-gem 'american_date', '~> 1.1.0'     # American style month/day/year date parsing
-gem 'dalli',         '~> 2.7.0'     # High performance memcached client
-gem 'pg',            '~> 0.17.1'    # Postgres ActiveRecord adapter
-gem 'queue_classic', '~> 3.0.0rc'   # Backgrounding queue that uses postgres for its queue
-gem 'unicorn',       '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
+gem 'american_date',       '~> 1.1.0'     # American style month/day/year date parsing
+gem 'dalli',               '~> 2.7.0'     # High performance memcached client
+gem 'pg',                  '~> 0.17.1'    # Postgres ActiveRecord adapter
+gem 'queue_classic',       '~> 3.0.0rc'   # Backgrounding queue that uses postgres for its queue
+gem 'rack-canonical-host', '~> 0.0.8'     # Automatically redirect to canonical host
+gem 'unicorn',             '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 
 # Asset related gems
 gem 'coffee-rails',   '~> 4.0.0'
