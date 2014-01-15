@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'mkmf'
 
 describe "General Environment" do
   it "has an application name" do
