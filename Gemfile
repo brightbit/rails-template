@@ -12,12 +12,13 @@ gem 'rack-canonical-host', '~> 0.0.8'     # Automatically redirect to canonical 
 gem 'unicorn',             '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 
 # Asset related gems
-gem 'coffee-rails',   '~> 4.0.0'
-gem 'jquery-rails',   '~> 3.0.4'
-gem 'momentjs-rails', '~> 2.5.0'
-gem 'sass-rails',     '~> 4.0.0.rc1'
-gem 'turbolinks',     '~> 2.1.0'
-gem 'uglifier',       '~> 2.4.0'
+gem 'coffee-rails',   '~> 4.0.0'     # Add Coffescript support to the asset pipeline
+gem 'font_assets',    '~> 0.1.10'    # Addresses Access-Control-Allow-Origin asset problems in Firefox
+gem 'jquery-rails',   '~> 3.0.4'     # jQuery 1.10 for pipeline
+gem 'momentjs-rails', '~> 2.5.0'     # JavaScript Time Library
+gem 'sass-rails',     '~> 4.0.0.rc1' # CSS3 extension (mixins, variables, nesting, etc)
+gem 'turbolinks',     '~> 2.1.0'     # Makes following links in your web application faster
+gem 'uglifier',       '~> 2.4.0'     # Makes your JS ugly (compressed)
 
 gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease
 

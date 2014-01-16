@@ -17,5 +17,11 @@ module MyApp
 
     # Raise errors when an unpermitted param is sent to a controller action
     ActiveRecord::Base.send(:include, ActiveModel::ForbiddenAttributesProtection)
+
+    # Add the fonts path
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    # Precompile additional assets
+    config.assets.precompile += %w(.svg .eot .woff .ttf)
   end
 end
