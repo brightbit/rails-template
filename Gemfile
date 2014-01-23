@@ -9,6 +9,7 @@ gem 'dalli',               '~> 2.7.0'     # High performance memcached client
 gem 'pg',                  '~> 0.17.1'    # Postgres ActiveRecord adapter
 gem 'queue_classic',       '~> 3.0.0rc'   # Backgrounding queue that uses postgres for its queue
 gem 'rack-canonical-host', '~> 0.0.8'     # Automatically redirect to canonical host
+gem 'simple_form',         '~> 3.0.1'     # Forms made easy
 gem 'unicorn',             '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 
 # Asset/View related gems
