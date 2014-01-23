@@ -12,6 +12,7 @@ gem 'rack-canonical-host', '~> 0.0.8'     # Automatically redirect to canonical 
 gem 'unicorn',             '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 
 # Asset/View related gems
+gem 'bootstrap-sass', '~> 3.0.3.0'   # Sleek, intuitive, and powerful mobile first front-end framework
 gem 'coffee-rails',   '~> 4.0.0'     # Add Coffescript support to the asset pipeline
 gem 'font_assets',    '~> 0.1.10'    # Addresses Access-Control-Allow-Origin asset problems in Firefox
 gem 'high_voltage',   '~> 2.1.0'     # Easily include static pages
