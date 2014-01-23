@@ -6,8 +6,17 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module MyApp
-  class Application < Rails::Application
+raise %Q(
+  Please set an APP_NAME environment variable in .env.
+  If you are initializing this app, run bin/setup to copy over the example .env.
+) unless ENV['APP_NAME']
+
+#TODO: Decide if
+#   Object.const_set(ENV.fetch('APP_NAME').camelize, Module.new do ...
+# is a better syntax.
+
+application = Module.new do
+  const_set :Application, Class.new(Rails::Application) do
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -25,3 +34,5 @@ module MyApp
     config.assets.precompile += %w(.svg .eot .woff .ttf)
   end
 end
+
+Object.const_set ENV.fetch('APP_NAME').camelize, application

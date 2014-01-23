@@ -1,8 +1,0 @@
-#! /usr/bin/env bash
-[[ -z $1 ]] && echo 'Provide an app name' && exit 1
-input_string=${2:-MyApp}
-input_string_underscored=$(ruby -r'active_support/inflector' -e "puts '$input_string'.strip.underscore")
-output_string=$1
-output_string_underscored=$(ruby -r'active_support/inflector' -e "puts '$output_string'.strip.underscore")
-git grep -l -e "$input_string" | grep -v 'bin/rails-rename' | xargs sed -i '' "s/$input_string/$output_string/g"
-git grep -l -e "$input_string_underscored" | grep -v 'bin/rails-rename' | xargs sed -i '' "s/$input_string_underscored/$output_string_underscored/g"
