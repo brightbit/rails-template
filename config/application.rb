@@ -11,11 +11,7 @@ raise %Q(
   If you are initializing this app, run bin/setup to copy over the example .env.
 ) unless ENV['APP_NAME']
 
-#TODO: Decide if
-#   Object.const_set(ENV.fetch('APP_NAME').camelize, Module.new do ...
-# is a better syntax.
-
-application = Module.new do
+Object.const_set(ENV.fetch('APP_NAME').camelize, Module.new do
   const_set :Application, Class.new(Rails::Application) do
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -33,6 +29,4 @@ application = Module.new do
     # Precompile additional assets
     config.assets.precompile += %w(.svg .eot .woff .ttf)
   end
-end
-
-Object.const_set ENV.fetch('APP_NAME').camelize, application
+end)
