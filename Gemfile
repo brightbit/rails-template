@@ -11,12 +11,14 @@ gem 'queue_classic',       '~> 3.0.0rc'   # Backgrounding queue that uses postgr
 gem 'rack-canonical-host', '~> 0.0.8'     # Automatically redirect to canonical host
 gem 'unicorn',             '~> 4.7.0'     # HTTP server for fast clients on low-latency, high-bandwidth connections
 
-# Asset related gems
+# Asset/View related gems
 gem 'coffee-rails',   '~> 4.0.0'     # Add Coffescript support to the asset pipeline
 gem 'font_assets',    '~> 0.1.10'    # Addresses Access-Control-Allow-Origin asset problems in Firefox
+gem 'high_voltage',   '~> 2.1.0'     # Easily include static pages
 gem 'jquery-rails',   '~> 3.0.4'     # jQuery 1.10 for pipeline
 gem 'momentjs-rails', '~> 2.5.0'     # JavaScript Time Library
 gem 'sass-rails',     '~> 4.0.0.rc1' # CSS3 extension (mixins, variables, nesting, etc)
+gem 'slim-rails',     '~> 2.0.4'     # A fast, lightweight templating engine
 gem 'turbolinks',     '~> 2.1.0'     # Makes following links in your web application faster
 gem 'uglifier',       '~> 2.4.0'     # Makes your JS ugly (compressed)
 
