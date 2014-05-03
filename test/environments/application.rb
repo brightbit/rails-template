@@ -64,7 +64,8 @@ describe "General Environment" do
     end
 
     it "has dalli available" do
-      ActiveSupport::Cache.lookup_store(:dalli_store).stats.values.wont_include nil
+      Rails.cache.stats.values.wont_include nil
+      # ActiveSupport::Cache.lookup_store(:dalli_store).stats.values.wont_include nil
     end
 
     it "has pg available" do
@@ -82,8 +83,7 @@ describe "General Environment" do
   end
 
   describe "Bins" do
-    it "has direnv installed and configured" do
-      %x[direnv status].must_include 'Found RC allowed true'
+    it "has .git/safe/../../bin in PATH" do
       ENV['PATH'].split(':').grep('^bin$').wont_be_nil
       ENV['PATH'].split(':').grep('^vendor/bundle/bin$').wont_be_nil
     end
