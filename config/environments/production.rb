@@ -1,4 +1,4 @@
-MyApp::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -19,14 +19,14 @@ MyApp::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
-  # Enable Rails's static asset server (for passthrough CDNs)
+  # Enable Rails's static asset server (for passthrough CDNs).
   config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Fallback to assets pipeline if a precompiled asset is missed
+  # Fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
   # Generate digests for assets URLs.
@@ -57,14 +57,11 @@ MyApp::Application.configure do
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
-  # Use a different cache store in production
+  # Use a different cache store in production.
   config.cache_store = :dalli_store
 
-  # Add the fonts path
-  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-
-  # Precompile additional assets
-  config.assets.precompile += %w( .svg .eot .woff .ttf )
+  # Addresses Access-Control-Allow-Origin asset problems in Firefox
+  config.font_assets.origin = "https://#{ENV['CANONICAL_HOST']}"
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"

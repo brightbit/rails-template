@@ -3,6 +3,7 @@
 --
 
 SET statement_timeout = 0;
+SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -199,4 +200,5 @@ CREATE TRIGGER queue_classic_notify AFTER INSERT ON queue_classic_jobs FOR EACH 
 
 SET search_path TO "$user",public;
 
-INSERT INTO schema_migrations (version) VALUES ('20131121215515');
+INSERT INTO schema_migrations (version) VALUES ('20140115230618');
+

@@ -1,4 +1,4 @@
-MyApp::Application.routes.draw do
+Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +39,7 @@ MyApp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
@@ -53,11 +53,11 @@ MyApp::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+  #
   # Point root to static index file using high_voltage gem
-  root to: 'high_voltage/pages#show',         id: 'index'
+  root to: 'high_voltage/pages#show', id: 'index'
 
   # Point fallback route to any matching static page
   # Keep this at the end to avoid conflicting with other routes
-  get ':id' => 'high_voltage/pages#show',     as: :static
+  get ':id' => 'high_voltage/pages#show', as: :static
 end

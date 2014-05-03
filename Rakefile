@@ -3,4 +3,7 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-MyApp::Application.load_tasks
+Rails.application.load_tasks
+
+Rake::Task['default'].clear
+task default: 'test:all'

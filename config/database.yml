@@ -1,19 +1,19 @@
 development: &development
   adapter      : postgresql
   encoding     : unicode
-  database     : my_app_development
+  database     : <%= ENV['APP_NAME'] %>_development
   template     : template0
   pool         : 5
   min_messages : warning
 
 test: &test
   <<: *development
-  database     : my_app_test
+  database     : <%= ENV['APP_NAME'] %>_test
 
 staging: &staging
   <<: *development
-  database     : my_app_staging
+  database     : <%= ENV['APP_NAME'] %>_staging
 
 production: &production
   <<: *development
-  database     : my_app_production
+  database     : <%= ENV['APP_NAME'] %>_production
